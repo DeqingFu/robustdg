@@ -313,7 +313,7 @@ class MatchDG(BaseAlgo):
                         erm_loss+= F.cross_entropy(feat_match, label_match.long()).to(self.cuda)
                         penalty_erm+= float(erm_loss) 
                         
-                        train_acc+= torch.sum(torch.argmax(feat_match, dim=1) == label_match ).item()
+                        train_acc+= torch.sum(torch.argmax(feat_match, dim=1).long() == label_match.long()).item()
                         train_size+= label_match.shape[0]                        
 
                         # Creating tensor of shape ( domain size, total domains, feat size )
