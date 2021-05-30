@@ -259,7 +259,6 @@ class MnistColored(BaseDataLoader):
         # domain for colored MNSIT
         # train: domain: ["R", "G", "B", "RG", "RB", "GB"]
         # test: domain: ["W", "RGB"]
-        counter = 0
         for domain in self.list_train_domains:
             # Run transforms
             mnist_img_colored= torch.zeros((mnist_size, self.args.img_c, self.args.img_w, self.args.img_h))
@@ -290,7 +289,7 @@ class MnistColored(BaseDataLoader):
                 if domain == "W": # white
                     img_colored = to_pil(mnist_imgs[i].repeat(3,1,1))
                     '''
-                    if counter % 2000 < 50:
+                    if i < 50:
                        img_colored.save("./debug/test/{}_{}.png".format(domain, i))
                     '''
                 else:
@@ -314,10 +313,9 @@ class MnistColored(BaseDataLoader):
                         
                     img_colored = to_pil(img_colored)
                     '''
-                    if counter % 2000 < 25:
+                    if i % 2000 < 25:
                         img_colored.save("./debug/train/{}_{}.png".format(domain, i))
                     '''
-                counter += 1
                 mnist_img_colored[i] = to_tensor(img_colored)
                 mnist_idx.append(i)
                 

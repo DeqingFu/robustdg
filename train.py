@@ -132,7 +132,7 @@ else:
 train_domains= args.train_domains
 test_domains= args.test_domains
 
-
+print("method: ", args.method_name)
 print("training domains: ", train_domains)
 print("testing  domains: ", test_domains)
 
