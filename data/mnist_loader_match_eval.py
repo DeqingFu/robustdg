@@ -286,13 +286,20 @@ class MnistColoredAugEval(BaseDataLoader):
                 else:
                     img_colored = torch.zeros_like(mnist_imgs[i]).repeat(3,1,1) # 3 x 28 x 28
                     if "R" in domain:
-                        img_colored[0] = mnist_imgs[i] * np.random.rand()
-                    elif "G" in domain:
-                        img_colored[1] = mnist_imgs[i] * np.random.rand()
-                    elif "B" in domain:
-                        img_colored[2] = mnist_imgs[i] * np.random.rand()
-                    else:
-                        raise Exception("domain name error")
+                        while True:
+                            alpha = np.random.rand()
+                            if alpha > 0.2: break
+                        img_colored[0] = mnist_imgs[i] * alpha
+                    if "G" in domain:
+                        while True:
+                            alpha = np.random.rand()
+                            if alpha > 0.2: break
+                        img_colored[1] = mnist_imgs[i] * alpha
+                    if "B" in domain:
+                        while True:
+                            alpha = np.random.rand()
+                            if alpha > 0.2: break
+                        img_colored[2] = mnist_imgs[i] * alpha
                     img_colored = to_pil(img_colored)
 
                 mnist_img_colored[i] = to_tensor( to_augment(img_colored) )
