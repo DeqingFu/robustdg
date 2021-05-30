@@ -111,7 +111,7 @@ class BaseEval():
     
     def load_model(self, run_matchdg_erm):
         
-        if self.args.method_name in ['erm_match', 'csd', 'irm']:
+        if self.args.method_name in ['erm_match', 'csd', 'irm', 'erm']:
             self.save_path= self.base_res_dir + '/Model_' + self.post_string
                 
         elif self.args.method_name == 'matchdg_ctr':

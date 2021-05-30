@@ -132,6 +132,10 @@ else:
 train_domains= args.train_domains
 test_domains= args.test_domains
 
+
+print("training domains: ", train_domains)
+print("testing  domains: ", test_domains)
+
 #Initialize
 final_accuracy_target_val=[]
 final_accuracy_source_val=[]

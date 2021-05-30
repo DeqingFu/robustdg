@@ -161,6 +161,15 @@ def get_dataloader(args, run, domains, data_case, eval_case, kwargs):
         else:
             from data.mnist_loader import MnistRotated
 
+    if args.dataset_name == "colored_mnist":
+        if eval_case:
+            if args.test_metric in ['match_score'] and args.match_func_aug_case:
+                print('Match Function evaluation on self augmentations')
+                from data.mnist_loader_match_eval import MnistColoredAugEval as MnistColored
+            else:
+                from data.mnist_loader import MnistColored
+        else:
+            from data.mnist_loader import MnistColored
             
     if args.dataset_name == 'rot_mnist_spur':        
         if eval_case:
@@ -245,6 +254,14 @@ def get_dataloader(args, run, domains, data_case, eval_case, kwargs):
 
     elif args.dataset_name in ['chestxray_spur']:
         data_obj= ChestXRay(args, domains, '/chestxray_spur/', data_case=data_case, match_func=match_func)
+    
+    elif args.dataset_name in ["colored_mnist"]:
+        if data_case == 'test' and args.model_name not in ['lenet']:
+            mnist_subset=9
+        else:
+            mnist_subset=run 
+        print('MNIST Subset: ', mnist_subset)
+        data_obj=  MnistColored(args, domains, mnist_subset, '/colored_mnist/', data_case=data_case, match_func=match_func)
         
     elif args.dataset_name in ['rot_mnist', 'fashion_mnist', 'rot_mnist_spur']:       
         if data_case == 'test' and args.model_name not in ['lenet']:
