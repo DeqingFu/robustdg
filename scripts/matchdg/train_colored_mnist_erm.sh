@@ -9,5 +9,5 @@ python train.py \
 --ctr_match_interrupt 5 \
 --ctr_model_name resnet18 \
 --img_c 3 --img_w 128 --img_h 128 \
---train_domains R G B RG RB GB  \
+--train_domains R G B \
 --test_domains W RGB

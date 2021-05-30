@@ -1,6 +1,6 @@
 python train.py \
 --dataset colored_mnist \
---method_name matchdg_ctr \
+--method_name erm \
 --match_case 0.01 \
 --match_flag 1 \
 --epochs 100 \
