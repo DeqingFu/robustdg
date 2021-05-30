@@ -8,7 +8,7 @@ envs/
 results/
 
 #extra-files
-*.sh
+#*.sh
 
 #philly_tools
 .ptignore
