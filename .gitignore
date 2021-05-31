@@ -5,7 +5,7 @@ data/datasets/
 envs/
 
 #Results dir
-results/
+#results/
 
 #extra-files
 #*.sh
@@ -145,3 +145,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# checkpoint
+*.pth 
