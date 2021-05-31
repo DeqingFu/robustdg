@@ -244,7 +244,7 @@ class MatchDG(BaseAlgo):
                 test_method.get_metric_eval()
                                 
                 # Save the model's weights post training
-                if test_method.metric_score['TopK Perfect Match Score'] > self.max_val_score:
+                if test_method.metric_score['TopK Perfect Match Score'] >= self.max_val_score:
                     self.max_val_score= test_method.metric_score['TopK Perfect Match Score']
                     self.max_epoch= epoch
                     self.save_model_ctr_phase(epoch)
