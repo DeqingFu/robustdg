@@ -6,5 +6,5 @@ python test.py \
 --match_flag 1 \
 --test_metric match_score \
 --img_c 3 --img_w 128 --img_h 128 \
---train_domains R G B RG RB GB \
+--train_domains R G \
 --test_domains W RGB

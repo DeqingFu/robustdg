@@ -9,5 +9,5 @@ python train.py \
 --match_flag 1 \
 --test_metric acc \
 --img_c 3 --img_w 128 --img_h 128 \
---train_domains R G B \
+--train_domains R G \
 --test_domains W RGB

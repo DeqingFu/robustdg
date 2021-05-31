@@ -6,5 +6,5 @@ python test.py \
 --pos_metric cos \
 --test_metric match_score \
 --img_c 3 --img_w 128 --img_h 128 \
---train_domains R G B \
+--train_domains R G \
 --test_domains W RGB \
