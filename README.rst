@@ -1,5 +1,6 @@
-A modified repo to reproduce results from `MatchDG paper <https://arxiv.org/abs/2006.07500>`_ 
-The orginal codes from the authors are `here <https://github.com/microsoft/robustdg>`_
+A modified repo to reproduce results from `MatchDG paper <https://arxiv.org/abs/2006.07500>`_. 
+
+The orginal codes from the authors are `here <https://github.com/microsoft/robustdg>`_.
 
 Instead of rot_mnist, I changed the dataset to be a customized colored MNIST, 
   where in training, one or two RGB channels are colored,
