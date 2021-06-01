@@ -13,7 +13,7 @@ To use the command-line interface of RobustDG, clone this repo and add the folde
 
 **Load dataset**
 
-Let's first load the rotatedMNIST dataset in a suitable format for the resnet18 architecture.
+Let's first load the coloredMNIST dataset in a suitable format for the resnet18 architecture.
 
 .. code:: shell
 
